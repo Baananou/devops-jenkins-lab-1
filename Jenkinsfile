@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('*/5 * * * *') // Check every 5 minutes
+        pollSCM('*/1 * * * *') // Check every 1 minute
     }
     stages {
         stage('Checkout') {
@@ -20,11 +20,6 @@ pipeline {
             steps {
                 echo "Déploiement du projet"
                 // Add your deployment commands here
-            }
-        }
-        stage('Hello World') {
-            steps {
-                echo "Hello, World!"
             }
         }
     }
