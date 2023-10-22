@@ -1,0 +1,35 @@
+pipeline {
+    agent any  // You can specify a specific agent here
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building the project"'
+                // Add your build commands here
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests"'
+                // Add your test commands here
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying the project"'
+                // Add your deployment commands here
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
